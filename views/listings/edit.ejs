@@ -1,0 +1,46 @@
+<% layout("/layouts/boilerplate") %>
+    <div class="row">
+        <div class="col-8 offset-3">
+            <h1>Edit List</h1>
+   <form method="POST" action="/listings/<%=aListings._id%>?_method=PUT" novalidate    class="needs-validation" enctype="multipart/form-data">
+    <div class=" mb-3">
+        <label for="title" class="form-label" >Enter Title</label>
+    <input name="aListings[title]" value="<%=aListings.title%>" type="text" class="form-control"  required/>
+    <div class="valid-feedback">The Title is good</div>
+    </div>
+    <div class=" mb-3">
+        <label for="description" class="form-label" >Enter Description</label>
+    <textarea name="aListings[description]" type="text"  class="form-control"  required><%=aListings.description%></textarea>
+    <div class="invalid-feedback">Please enter description</div>
+    </div>
+    <h1>Original Image</h1>
+    <div class="mb-3"><img src="<%=originalimageUrl%>"></div>
+    <div class=" mb-3">
+        <label for="image" class="form-label" >Upload Image </label>
+    <input name="aListings[image]"  type="file" class="form-control" />
+   
+    </div>
+    <div class="row">
+    <div class=" mb-3 col-md-4">
+        <label for="price" class="form-label" >Price</label>
+    <input name="aListings[price]"  value="<%=aListings.price%>" type="text"  class="form-control"  required>
+    <div class="invalid-feedback">Please enter Price</div>
+</div>
+    <div class=" mb-3 col-md-8">
+        <label for="location" class="form-label" >Location</label>
+    <input name="aListings[location]" value="<%=aListings.location%>" type="text"  class="form-control" required>
+    <div class="invalid-feedback">Please enter Location></div>
+</div>
+</div>
+    <div class=" mb-3">
+        <label for="country" class="form-label" >Country</label>
+    <input  name="aListings[country]" value="<%=aListings.country%>"  type="text"  class="form-control" required>
+    <div class="invalid-feedback">Please enter Country</div>
+</div>
+    <br>
+    <br>
+    <button class="btn btn-dark edit-btn">edit</button>
+   </form> 
+</div>
+</div>
+
